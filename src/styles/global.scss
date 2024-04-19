@@ -1,0 +1,13 @@
+@use './fonts.scss';
+
+body {
+    font-family: "Robot Flex";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.7px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #414854;
+}

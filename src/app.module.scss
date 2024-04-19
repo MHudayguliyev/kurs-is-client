@@ -1,0 +1,30 @@
+.container {
+    width: 550px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.theForm {
+    border: 1px solid green;
+    background-color: #fff;
+    border-radius: .4em;
+    padding: 15px;
+    -webkit-box-shadow: 0px -1px 7px 5px rgba(21,24,28,0.22);
+    -moz-box-shadow: 0px -1px 7px 5px rgba(21,24,28,0.22);
+    box-shadow: 0px -1px 7px 5px rgba(21,24,28,0.22);
+    div {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    p {
+        text-align: center;
+    }
+
+    input {
+        margin-bottom: 0.5em;
+    }
+}

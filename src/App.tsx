@@ -1,33 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { io } from 'socket.io-client';
+import { Button, Input, Form } from 'antd';
+//styles
+// @ts-ignore
+import styles from './app.module.scss'
+import Chat from './components/Chat/Chat';
+// for notification
+import { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast'
+
+const socket = io('http://localhost:8080')
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [username, setUsername] = useState<string>("")
+  const [room, setRoom] = useState<string>("")
+  const [showChatForm, setShowChatForm] = useState<boolean>(false)
+  const [joining, setJoining] = useState<boolean>(false)
+
+  const onSubmit = () => {
+    if(username !== "" && room !== ""){
+      setJoining(true)
+      socket.emit('join-room', room)
+      setTimeout(() => {
+        setJoining(false)
+        setShowChatForm(true)
+      }, 1000)
+    }else toast.error('Please enter credentials.')
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
+
+      <div className={styles.container}>
+        {
+          !showChatForm ? 
+            <Form onSubmitCapture={onSubmit} className={styles.theForm}>
+
+              <div>Join the chat</div>
+              <p>Please enter the credentials to join</p>
+              <Input 
+                placeholder="username" 
+                className={styles.field} 
+                onChange={e => setUsername(e.target.value)} 
+                value={username}
+                // status="error"
+              />
+              <Input 
+                placeholder="room" 
+                className={styles.field} 
+                onChange={e => setRoom(e.target.value)} 
+                value={room}
+              />
+              <Button htmlType='submit' type="primary" block loading={joining}>
+                Submit
+              </Button>
+            </Form> : 
+
+            <Chat 
+              socket={socket}
+              username={username}
+              room={room}
+            />
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

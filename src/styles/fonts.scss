@@ -1,0 +1,48 @@
+// Roboto flex regular
+@font-face {
+    font-family: 'Robot Flex';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/RobotoFlex-Regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Flex Regular'), local('Roboto Flex Regular'),
+          url('../assets/fonts/RobotoFlex-Regular.eot?#iefix') format('embedded-opentype'),
+          url('../assets/fonts/RobotoFlex-Regular.woff2') format('woff2'),
+          url('../assets/fonts/RobotoFlex-Regular.woff') format('woff'),
+          url('../assets/fonts/RobotoFlex-Regular.ttf') format('truetype');
+}
+// Bodoni Moda regular
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: url('../assets/fonts/BodoniModa-Regular.eot');
+    src: local('Bodoni Moda Regular'), local('BodoniModa-Regular'),
+        url('../assets/fonts/BodoniModa-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BodoniModa-Regular.woff2') format('woff2'),
+        url('../assets/fonts/BodoniModa-Regular.woff') format('woff'),
+        url('../assets/fonts/BodoniModa-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+// Bodoni Moda Italic
+@font-face {
+    font-family: 'Bodoni Moda';
+    src: url('../assets/fonts/BodoniModa-Italic.eot');
+    src: local('Bodoni Moda Italic'), local('BodoniModa-Italic'),
+        url('../assets/fonts/BodoniModa-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BodoniModa-Italic.woff2') format('woff2'),
+        url('../assets/fonts/BodoniModa-Italic.woff') format('woff'),
+        url('../assets/fonts/BodoniModa-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+// Pacifico 
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../assets/fonts/Pacifico-Regular.eot');
+    src: local('Pacifico Regular'), local('Pacifico-Regular'),
+        url('../assets/fonts/Pacifico-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Pacifico-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Pacifico-Regular.woff') format('woff'),
+        url('../assets/fonts/Pacifico-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
